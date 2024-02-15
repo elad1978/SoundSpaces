@@ -30,21 +30,21 @@ const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   //using the redux global state
   const dispatch = useDispatch();
-  const Navigate = useNavigate();
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   /*MUI builtin hook that utilized for responsive design. It enables you to adaptively render 
   components or apply styles based on the screen size or specific media queries defined.*/
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   const theme = useTheme();
-  const neutralLight = theme.palette.neutral.Light;
+  const neutralLight = theme.palette.neutral.light;
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
   const fullName = `${user.firstName} ${user.lastName}`;
-  // const fullName = `${"elad"} ${"cohen"}`;  //for testing purposes
+  //const fullName = `${"elad"} ${"cohen"}`; //for testing purposes
 
   return (
     /* the FlexBetween component(we made) is MUI Box component that aloes you to use css property without sx={}
@@ -57,7 +57,7 @@ const Navbar = () => {
           fontWeight="bold"
           fontSize="clamp(1rem,2rem,2.25rem)"
           color="primary"
-          onClick={() => Navigate("/home")}
+          onClick={() => navigate("/home")}
           sx={{
             "&:hover": {
               color: primaryLight,
@@ -135,7 +135,7 @@ const Navbar = () => {
           height="100%"
           zIndex="10" // to be in front of the other components
           maxWidth="500px"
-          minWidth="300p"
+          minWidth="300px"
           backgroundColor={background}
         >
           {/* CLOSE ICON */}
