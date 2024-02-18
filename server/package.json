@@ -6,7 +6,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "app": "nodemon server.js"
+    "server": "nodemon server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

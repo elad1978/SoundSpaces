@@ -38,6 +38,7 @@ const UserWidget = ({ userId, picturePath }) => {
   };
   useEffect(() => {
     getUser();
+    // eslint-disable-next-line
   }, []); // because this is an empty array, it will only run once.
 
   if (!user) {
@@ -81,7 +82,7 @@ const UserWidget = ({ userId, picturePath }) => {
             >
               {firstName} {lastName}
             </Typography>
-            <Typography color={medium}>{friends.length}</Typography>
+            <Typography color={medium}>{friends.length} friends</Typography>
           </Box>
         </FlexBetween>
         <ManageAccountsOutlined />
@@ -98,8 +99,10 @@ const UserWidget = ({ userId, picturePath }) => {
           <Typography color={medium}>{occupation}</Typography>
         </Box>
       </Box>
+      <Divider />
+      {/* THIRD ROW */}
       <Box p="1rem 0">
-        <FlexBetween>
+        <FlexBetween mb={"0.5rem"}>
           <Typography color={medium}>Who`s viewed your profile?</Typography>
           <Typography color={main} fontWeight="500">
             {viewedProfile}
@@ -112,7 +115,7 @@ const UserWidget = ({ userId, picturePath }) => {
           </Typography>
         </FlexBetween>
       </Box>
-
+      <Divider />
       {/* FOURTH ROW */}
       <Box p="1rem 0">
         <Typography color={main} fontSize="500" mb="1rem">
